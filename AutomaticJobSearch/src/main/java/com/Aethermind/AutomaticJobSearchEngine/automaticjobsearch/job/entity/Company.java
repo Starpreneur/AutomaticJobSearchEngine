@@ -1,7 +1,6 @@
 package com.Aethermind.AutomaticJobSearchEngine.automaticjobsearch.job.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 
 @Getter
@@ -9,6 +8,8 @@ import lombok.Getter;
 @Table(name = "companies")
 public class Company {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String companyName;

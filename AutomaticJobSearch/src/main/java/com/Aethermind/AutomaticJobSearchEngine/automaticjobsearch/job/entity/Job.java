@@ -3,9 +3,10 @@ package com.Aethermind.AutomaticJobSearchEngine.automaticjobsearch.job.entity;
 import com.Aethermind.AutomaticJobSearchEngine.automaticjobsearch.job.enums.EmploymentType;
 import com.Aethermind.AutomaticJobSearchEngine.automaticjobsearch.job.enums.JobSource;
 import com.Aethermind.AutomaticJobSearchEngine.automaticjobsearch.job.enums.JobStatus;
-import com.Aethermind.AutomaticJobSearchEngine.automaticjobsearch.job.enums.RemoteType;
+import com.Aethermind.AutomaticJobSearchEngine.automaticjobsearch.job.enums.JobLocationType;
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -26,124 +27,69 @@ public class Job {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Setter
     private String title;
 
+    @Setter
     @Column(columnDefinition = "TEXT")
     private String description;
 
+    @Setter
     private String location;
 
+    @Setter
     @Enumerated(EnumType.STRING)
-    private RemoteType remoteType;
+    private JobLocationType jobLocationType;
 
+    @Setter
     @Enumerated(EnumType.STRING)
     private EmploymentType employmentType;
 
+    @Setter
     private Integer experienceMin;
 
+    @Setter
     private Integer experienceMax;
 
+    @Setter
     private BigDecimal salaryMin;
 
+    @Setter
     private BigDecimal salaryMax;
 
+    @Setter
     private String salaryCurrency;
 
+    @Setter
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "company_id")
     private Company company;
 
+    @Setter
     @Enumerated(EnumType.STRING)
     private JobSource source;
 
+    @Setter
     private String externalJobId;
 
+    @Setter
     private String sourceUrl;
 
+    @Setter
     @Enumerated(EnumType.STRING)
     private JobStatus status;
 
+    @Setter
     private LocalDateTime postedAt;
 
+    @Setter
     private LocalDateTime expiresAt;
 
+    @Setter
     private LocalDateTime createdAt;
 
+    @Setter
     private LocalDateTime updatedAt;
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    public void setRemoteType(RemoteType remoteType) {
-        this.remoteType = remoteType;
-    }
-
-    public void setEmploymentType(EmploymentType employmentType) {
-        this.employmentType = employmentType;
-    }
-
-    public void setExperienceMin(Integer experienceMin) {
-        this.experienceMin = experienceMin;
-    }
-
-    public void setExperienceMax(Integer experienceMax) {
-        this.experienceMax = experienceMax;
-    }
-
-    public void setSalaryMin(BigDecimal salaryMin) {
-        this.salaryMin = salaryMin;
-    }
-
-    public void setSalaryMax(BigDecimal salaryMax) {
-        this.salaryMax = salaryMax;
-    }
-
-    public void setSalaryCurrency(String salaryCurrency) {
-        this.salaryCurrency = salaryCurrency;
-    }
-
-    public void setCompany(Company company) {
-        this.company = company;
-    }
-
-    public void setSource(JobSource source) {
-        this.source = source;
-    }
-
-    public void setExternalJobId(String externalJobId) {
-        this.externalJobId = externalJobId;
-    }
-
-    public void setSourceUrl(String sourceUrl) {
-        this.sourceUrl = sourceUrl;
-    }
-
-    public void setStatus(JobStatus status) {
-        this.status = status;
-    }
-
-    public void setPostedAt(LocalDateTime postedAt) {
-        this.postedAt = postedAt;
-    }
-
-    public void setExpiresAt(LocalDateTime expiresAt) {
-        this.expiresAt = expiresAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
-    }
 }
