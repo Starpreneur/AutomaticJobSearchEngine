@@ -1,4 +1,4 @@
-package com.Aethermind.AutomaticJobSearchEngine.AutomaticJobSearch;
+package com.Aethermind.AutomaticJobSearchEngine.automaticjobsearch;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
