@@ -3,9 +3,11 @@ package com.Aethermind.AutomaticJobSearchEngine.automaticjobsearch.job.dto;
 import com.Aethermind.AutomaticJobSearchEngine.automaticjobsearch.job.enums.EmploymentType;
 import com.Aethermind.AutomaticJobSearchEngine.automaticjobsearch.job.enums.JobLocationType;
 import com.Aethermind.AutomaticJobSearchEngine.automaticjobsearch.job.enums.JobSource;
+import lombok.Data;
 
 import java.math.BigDecimal;
 
+@Data
 public class JobDTO {
 
     private String title;

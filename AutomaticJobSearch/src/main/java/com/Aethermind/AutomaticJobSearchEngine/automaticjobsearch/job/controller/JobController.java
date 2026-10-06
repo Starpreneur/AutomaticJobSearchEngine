@@ -19,7 +19,7 @@ public class JobController {
     }
 
     @PostMapping("/createJob")
-    public void createJob(JobDTO jobDTO) {
+    public void createJob(@RequestBody JobDTO jobDTO) {
         jobService.createJob(jobDTO);
     }
 

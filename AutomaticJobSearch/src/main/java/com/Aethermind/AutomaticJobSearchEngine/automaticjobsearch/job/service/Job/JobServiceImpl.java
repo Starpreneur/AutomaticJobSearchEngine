@@ -33,7 +33,7 @@ public class JobServiceImpl implements JobService {
     }
 
     @Override
-    public List<Job> searchBySource(JobSource source) {
+    public List<JobDTO> searchBySource(JobSource source) {
         return List.of();
     }
 }

@@ -13,6 +13,6 @@ public interface JobService {
     public void createJob(JobDTO jobDTO);
     public JobDTO searchJob(Long jobId);
     public List<JobDTO> getAllJobs();
-    public List<Job> searchBySource(JobSource source);
+    public List<JobDTO> searchBySource(JobSource source);
 
 }
